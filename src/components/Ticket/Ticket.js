@@ -1,7 +1,7 @@
 import { useSelector, useDispatch } from "react-redux";
-import { clearTicket, passenger, ticketOpen } from "//src/redux/actions";
+import { clearTicket, passenger, ticketOpen } from "../../redux/actions";
 
-import InputPassenger from "//src/components/Ticket/InputPassenger";
+import InputPassenger from "./InputPassenger";
 import TicketFinished from "./TicketFinished";
 import TicketCloseButton from "./TicketCloseButton";
 import FlightRoutes from "../Flights/FlightRoutes";

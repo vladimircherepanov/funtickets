@@ -1,5 +1,5 @@
 import { useDispatch, useSelector } from "react-redux";
-import { clearDates } from "//src/redux/actions";
+import { clearDates } from "../../redux/actions";
 
 export default () => {
   const dispatch = useDispatch();

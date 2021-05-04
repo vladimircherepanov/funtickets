@@ -2,7 +2,7 @@ import { useSelector, useDispatch } from "react-redux";
 import Loader from "../Loader";
 import FlightTableItem from "./FlightTableItem";
 //import FlightsPagination from "./FlightsPagination";
-import { sortFlightData, sortFlightDataByDuration } from "//src/redux/actions";
+import { sortFlightData, sortFlightDataByDuration } from "../../redux/actions";
 import LoadMoreButton from "./LoadMoreButton";
 import * as Icon from "react-bootstrap-icons";
 

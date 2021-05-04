@@ -1,6 +1,6 @@
 import { useDispatch, useSelector } from "react-redux";
 
-import { getCurrency } from "//src/redux/actions";
+import { getCurrency } from "../../redux/actions";
 
 import LanguageSwitcher from "./LanguageSwitcher";
 

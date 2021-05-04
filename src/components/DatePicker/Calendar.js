@@ -3,7 +3,7 @@ import { useTranslation } from "react-i18next";
 import DayPicker from "react-day-picker";
 import "react-day-picker/lib/style.css";
 import { DateUtils } from "react-day-picker";
-import { selectArrivalDate, selectDepartureDate } from "//src/redux/actions";
+import { selectArrivalDate, selectDepartureDate } from "../../redux/actions";
 
 import { useDispatch, useSelector } from "react-redux";
 import CalendarButton from "./CalendarButton";

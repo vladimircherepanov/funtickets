@@ -3,7 +3,7 @@ import {
   getFromInputValue,
   clearAirportName,
   clickFrom
-} from "//src/redux/actions";
+} from "../../redux/actions";
 
 export default () => {
   const dispatch = useDispatch();

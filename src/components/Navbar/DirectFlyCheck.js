@@ -1,4 +1,4 @@
-import { directFly } from "//src/redux/actions";
+import { directFly } from "../../redux/actions";
 import { useDispatch, useSelector } from "react-redux";
 
 export default () => {

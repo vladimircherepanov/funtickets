@@ -3,7 +3,7 @@ import { useFormik, FormikProvider, Form, useField } from "formik";
 import * as Yup from "yup";
 import { useDispatch, useSelector } from "react-redux";
 
-import { getPassenger, passenger } from "//src/redux/actions";
+import { getPassenger, passenger } from "../../redux/actions";
 
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 

@@ -1,5 +1,5 @@
 import { useSelector, useDispatch } from "react-redux";
-import { loadMoreFlights } from "//src/redux/actions";
+import { loadMoreFlights } from "../../redux/actions";
 
 export default () => {
   const dispatch = useDispatch();

@@ -1,5 +1,5 @@
 import { useSelector, useDispatch } from "react-redux";
-import { ticketOpen, warningAlert } from "//src/redux/actions";
+import { ticketOpen, warningAlert } from "../../redux/actions";
 
 export default () => {
   const dispatch = useDispatch();

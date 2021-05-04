@@ -1,7 +1,7 @@
 import { useSelector, useDispatch } from "react-redux";
 import ReactCountryFlag from "react-country-flag";
 
-import { getAirportName } from "//src/redux/actions";
+import { getAirportName } from "../../redux/actions";
 
 export default () => {
   const dispatch = useDispatch();

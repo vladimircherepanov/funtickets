@@ -1,5 +1,5 @@
 import { useSelector, useDispatch } from "react-redux";
-import { getDetails } from "//src/redux/actions";
+import { getDetails } from "../../redux/actions";
 
 export default (props) => {
   const dispatch = useDispatch();

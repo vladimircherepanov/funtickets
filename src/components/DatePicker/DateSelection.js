@@ -1,7 +1,7 @@
 import Calendar from "./Calendar";
-import { toggleCalendar } from "//src/redux/actions";
+import { toggleCalendar } from "../../redux/actions";
 import { useDispatch, useSelector } from "react-redux";
-import { formatDate } from "//src/utils/formatDate";
+import { formatDate } from "../../utils/formatDate";
 
 export default () => {
   const dispatch = useDispatch();

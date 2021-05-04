@@ -1,7 +1,7 @@
 import { useSelector } from "react-redux";
-import { convertDate, convertTime } from "//src/utils/convertDate";
+import { convertDate, convertTime } from "../../utils/convertDate";
 
-import { carriers } from "//src/sources/carriers";
+import { carriers } from "../../sources/carriers";
 
 export default (props) => {
   const detailsId = useSelector((state) => state.inputs.detailsId);

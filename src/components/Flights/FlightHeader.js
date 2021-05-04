@@ -1,9 +1,10 @@
 import _ from "lodash";
 
 import { useDispatch, useSelector } from "react-redux";
-import { getTicket } from "//src/redux/actions";
-import { carriers } from "//src/sources/carriers";
-import { convertDate, convertTime } from "//src/utils/convertDate";
+
+import { getTicket } from "../../redux/actions";
+import { carriers } from "../../sources/carriers";
+import { convertDate, convertTime } from "../../utils/convertDate";
 
 export default (props) => {
   const utc_departure = props.route[0].utc_departure;

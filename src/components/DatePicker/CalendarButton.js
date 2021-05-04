@@ -1,5 +1,5 @@
 import { useDispatch, useSelector } from "react-redux";
-import { selectOneWay, toggleCalendar } from "//src/redux/actions";
+import { selectOneWay, toggleCalendar } from "../../redux/actions";
 
 export default () => {
   const dispatch = useDispatch();

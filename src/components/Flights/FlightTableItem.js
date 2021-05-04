@@ -1,6 +1,6 @@
 import { useDispatch, useSelector } from "react-redux";
 import FlightRoutes from "./FlightRoutes";
-import { getTicket } from "//src/redux/actions";
+import { getTicket } from "../../redux/actions";
 
 export default (props) => {
   const dispatch = useDispatch();

@@ -1,0 +1,21 @@
+{
+  "translations": {
+    "title_text": "Fake Tickets just for fun",
+    "arrival": "Arrival",
+    "destination": "Destination",
+    "hello": "Hello everyone",
+    "arrivalDate": "Date",
+    "oneWay": "ONE WAY",
+    "returnDate": "Return Date",
+    "find_button": "SEARCH",
+    "selectArrivalDate": "Select Arrival Date",
+    "selectOneWay": "ONE WAY",
+    "selectOneWayButton": "SELECT ONE WAY",
+    "submit": "SUBMIT",
+    "selectReturnDate": "Select Return Date",
+    "reset": "RESET",
+    "USD": "USD",
+    "EUR": "EUR",
+    "RUB": "RUB"
+  }
+}

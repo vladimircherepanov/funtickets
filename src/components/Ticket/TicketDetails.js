@@ -22,10 +22,11 @@ export default (props) => {
     return carr.name;
   };
 
+
   const flyReturn = () => {
-    if (flyArrayReturn) {
+    if (flyArrayReturn.length > 0) {
       return <h5>Return from {flyArrayReturn[0].cityFrom}</h5>;
-    }
+    } else {return  <div></div>}
   };
 
   const flightTo = flyArrayTo.map((elem) => {

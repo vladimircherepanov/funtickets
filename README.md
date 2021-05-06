@@ -1,2 +1,2 @@
 # funtickets
-Created with CodeSandbox
+just for fun

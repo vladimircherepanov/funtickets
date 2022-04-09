@@ -1,5 +1,6 @@
-import { useSelector } from "react-redux";
+import {useDispatch, useSelector} from "react-redux";
 import QRCode from "qrcode.react";
+import TicketDetails from "./TicketDetails";
 
 import jsPDF from "jspdf";
 import { renderToString, renderToStaticMarkup } from "react-dom/server";
@@ -10,6 +11,10 @@ export default (props) => {
   const firstName = useSelector((state) => state.inputs.firstName);
   const secondName = useSelector((state) => state.inputs.secondName);
   const passportNumber = useSelector((state) => state.inputs.passportNumber);
+  const dispatch = useDispatch();
+  const flightData = useSelector((state) => state.flightData.flightData);
+  const ticket_id = useSelector((state) => state.inputs.ticket_id);
+  const ticketStatus = useSelector((state) => state.inputs.ticketOpen);
 
   const qrValue = firstName + secondName + passportNumber;
 
@@ -46,13 +51,13 @@ export default (props) => {
         </tbody>
       </table>
 
-      <table id="tab_customers" class="table table-striped" style={tableStyle}>
+      <table id="tab_customers" className="table table-striped" style={tableStyle}>
         <colgroup>
           <col span="1" style={colstyle} />
           <col span="1" style={colstyle} />
         </colgroup>
         <thead>
-          <tr class="warning">
+          <tr className="warning">
             <th>SOW Creation Date</th>
             <th>SOW Start Date</th>
             <th>Project</th>
@@ -105,9 +110,12 @@ export default (props) => {
   };
 
   console.log(props.flight);
+
+  const flight = flightData.find((item) => item.id === ticket_id);
+
   return (
     <div>
-      <div id="qr_code"></div>
+
       <nav>
         <TicketCloseButton />
       </nav>
@@ -116,12 +124,20 @@ export default (props) => {
         from <strong>{props.flight.cityFrom}</strong> to{" "}
         <strong>{props.flight.cityTo}</strong>
       </h2>
+      <h6>{props.flight.airline}-{props.flight.flight_no}</h6>
       <h6>{firstName || "First Name"}</h6>
       <h6>{secondName || "Second Name"}</h6>
       <h6>{passportNumber || "Passport Number"}</h6>
-      <button onClick={print}>print</button>
 
-      <nav class="navbar fixed-bottom navbar-light bg-light align-center">
+
+      <button onClick={print}>print</button>
+      <div>
+        <TicketDetails
+            route={flight.route}
+            destination={flight.cityTo}
+        />
+      </div>
+      <nav className="navbar fixed-bottom navbar-light bg-light align-center">
         <QRCode value={qrValue} renderAs="svg" />
       </nav>
     </div>

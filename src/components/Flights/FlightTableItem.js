@@ -7,6 +7,7 @@ export default (props) => {
 
   const currency = useSelector((state) => state.inputs.currency);
 
+
   const con = props.data.map((e) => {
     return (
       <div className="flightTableItem" key={e.id}>

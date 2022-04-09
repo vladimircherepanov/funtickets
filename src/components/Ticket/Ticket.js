@@ -102,6 +102,7 @@ export default () => {
                   <TicketDetails
                     route={flight.route}
                     destination={flight.cityTo}
+                    price = {flight.price}
                   />
                 </div>
               </div>

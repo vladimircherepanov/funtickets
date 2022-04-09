@@ -1,6 +1,9 @@
 import {useDispatch, useSelector} from "react-redux";
 import QRCode from "qrcode.react";
 import TicketDetails from "./TicketDetails";
+import randomTicketNo from "../../utils/randomTicketNo";
+import randomBookingNo from "../../utils/randomBookingNo";
+import {convertDate} from "../../utils/convertDate";
 
 import jsPDF from "jspdf";
 import { renderToString, renderToStaticMarkup } from "react-dom/server";
@@ -128,6 +131,14 @@ export default (props) => {
       <h6>{firstName || "First Name"}</h6>
       <h6>{secondName || "Second Name"}</h6>
       <h6>{passportNumber || "Passport Number"}</h6>
+      SELLING DATE
+      <h5>{convertDate(Date.now())}</h5>
+      TICKET NUMBER
+      <h5>{randomTicketNo()}</h5>
+      PNR LOCATOR
+      <h5>{randomBookingNo().toUpperCase()}</h5>
+      AIRLINE LOCATOR
+      <h5>{randomBookingNo().toUpperCase()}</h5>
 
 
       <button onClick={print}>print</button>
@@ -137,7 +148,7 @@ export default (props) => {
             destination={flight.cityTo}
         />
       </div>
-      <nav className="navbar fixed-bottom navbar-light bg-light align-center">
+      <nav className="">
         <QRCode value={qrValue} renderAs="svg" />
       </nav>
     </div>

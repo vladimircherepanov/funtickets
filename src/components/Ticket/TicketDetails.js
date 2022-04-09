@@ -1,21 +1,37 @@
+import { useDispatch, useSelector } from "react-redux";
+
 import { convertDate, convertTime } from "../../utils/convertDate";
 
 import { carriers } from "../../sources/carriers";
 
 export default (props) => {
+
+  const dispatch = useDispatch();
+
+  const currency = useSelector((state) => state.inputs.currency);
+
+
   const nnn = props.route.indexOf(
     props.route.find((el) => el.cityTo === props.destination)
   );
 
   const flyArrayTo = props.route.slice(0, nnn + 1);
   const flyArrayReturn = props.route.slice(nnn + 1, props.route.length);
+  const price = props.price;
+  const tarif = Math.round(price * 0.7)
 
   console.log("to", flyArrayTo);
   console.log("return", flyArrayReturn);
+  console.log("price", price);
+
 
   const flyToId = flyArrayTo[0].id;
 
   const flyTo = flyArrayTo[flyArrayTo.length - 1].cityTo;
+  //const dateTo = convertDate(flyArrayTo[flyArrayTo.length - 1].local_arrival);
+  //const dateReturn = convertDate(flyArrayReturn[flyArrayReturn.length - 1].local_arrival);
+
+
 
   const airlineName = (IATA) => {
     const carr = carriers.find((item) => item.id === IATA);
@@ -65,10 +81,21 @@ export default (props) => {
               <h6>{convertTime(elem.local_arrival)}</h6>
             </div>
           </div>
+          <div className="col">
+            {elem.fare_basis}
+          </div>
+          <div className="col">
+            {elem.fare_category}
+          </div>
+          <div className="col">
+            {elem.fare_classes}
+          </div>
         </div>
+
       </div>
     );
   });
+
 
   const returnFlight = () => {
     if (flyArrayReturn) {
@@ -108,6 +135,15 @@ export default (props) => {
                   <h6>{convertTime(elem.local_arrival)}</h6>
                 </div>
               </div>
+              <div className="col">
+                {elem.fare_basis}
+              </div>
+              <div className="col">
+                {elem.fare_category}
+              </div>
+              <div className="col">
+                {elem.fare_classes}
+              </div>
             </div>
           </div>
         );
@@ -123,8 +159,14 @@ export default (props) => {
         <h5>Flight to {flyTo}</h5>
       </div>
       <div>{flightTo}</div>
-      <div className="flightTitle">{flyReturn()}</div>
+      <div className="flightTitle">
+        <h5>{flyReturn()}</h5>
+      </div>
       <div>{returnFlight()}</div>
+      <div>{price}</div>
+      <div>{tarif}</div>
+      <div>{currency}</div>
+
     </div>
   );
 };

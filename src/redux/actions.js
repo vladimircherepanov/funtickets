@@ -387,7 +387,7 @@ export function loadFlightData(
       const response = await fetch(url, {
         headers: {
           accept: "application/json",
-          apikey: "KrEEB7SC_gDLiqRGMLu_PsrPcJ-lcsde"
+          apikey: "74eRO0iVMRjO2-AlQsYE3xUQIhu63qJ0"
         }
       });
       const json = await response.json();

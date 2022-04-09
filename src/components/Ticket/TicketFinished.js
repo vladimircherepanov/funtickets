@@ -14,7 +14,7 @@ export default (props) => {
   const qrValue = firstName + secondName + passportNumber;
 
   const qrcode = new QRCode("qr_code", {
-    text: "https://cravecookie.com/",
+    text: qrValue,
     width: 128,
     height: 128,
     colorDark: "#000000",
@@ -34,8 +34,17 @@ export default (props) => {
 
   const Prints = () => (
     <div style={styles}>
-      <h3>Time & Materials Statement of Work (SOW)</h3>
-      <h4>General Information</h4>
+      <h3>E-TICKET ITINERARY RECEIPT</h3>
+      <table>
+        <tbody>
+        <tr>
+          <td>SELLING DATE</td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        </tbody>
+      </table>
 
       <table id="tab_customers" class="table table-striped" style={tableStyle}>
         <colgroup>
@@ -87,7 +96,7 @@ export default (props) => {
         "Jan 1, 2018",
         "ABC Connect - ABCXYZ",
         "Dec 13, 2017",
-        "Dec 31, 2018"
+        "Dec 31, 2010"
       ]
     ];
     //pdf.addImage(img, "jpeg", 15, 40, 180, 160);

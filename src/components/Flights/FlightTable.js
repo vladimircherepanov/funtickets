@@ -2,9 +2,10 @@ import { useSelector, useDispatch } from "react-redux";
 import Loader from "../Loader";
 import FlightTableItem from "./FlightTableItem";
 //import FlightsPagination from "./FlightsPagination";
-import { sortFlightData, sortFlightDataByDuration } from "../../redux/actions";
+import { sortFlightData, sortFlightDataByDuration, filterPanelToggle } from "../../redux/actions";
 import LoadMoreButton from "./LoadMoreButton";
 import * as Icon from "react-bootstrap-icons";
+import FlightFilterPanel from "./FlightFilterPanel"
 
 export default () => {
   const dispatch = useDispatch();
@@ -14,6 +15,8 @@ export default () => {
   const currentPage = useSelector((state) => state.inputs.currentPage);
   const postPerPage = useSelector((state) => state.inputs.flightsPerPage);
   const sortDecreased = useSelector((state) => state.flightData.sortDecreased);
+  const filterPanelOpen = useSelector((state) => state.inputs.filterPanelOpen);
+
   const indexOfLastPost = currentPage * postPerPage;
 
   const indexOfFirstPost = 1; //indexOfLastPost - postPerPage;
@@ -49,6 +52,12 @@ export default () => {
       return flightData.length - 1;
     }
   };
+
+  const filterPanel = () => {
+    if(!filterPanelOpen) {
+      return <FlightFilterPanel/>
+    } else {return <div></div>}
+  }
 
   //});
 
@@ -91,12 +100,25 @@ export default () => {
               SORT BY DURATION {sortByDurationPic()}
             </button>
           </div>
+          <div className="col">
+            <button
+                className="btn btn-success"
+                onClick={() =>
+                    dispatch(
+                        filterPanelToggle(filterPanelOpen)
+                    )
+                }
+            >
+              FILTER {sortByDurationPic()}
+            </button>
+          </div>
+          {filterPanel()}
         </div>
 
         <FlightTableItem
           data={flightData.slice(indexOfFirstPost, indexOfLastPost)}
         />
-        <LoadMoreButton />
+<LoadMoreButton/>
       </div>
     );
   }

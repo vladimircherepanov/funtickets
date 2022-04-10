@@ -5,7 +5,6 @@ import { sortFlightData } from "//src/redux/actions";
 
 export default () => {
   const dispatch = useDispatch();
-
   const flightData = useSelector((state) => state.flightData.flightData);
   const sortByDurationDecr = useSelector(
     (state) => state.flightData.sortDecreased

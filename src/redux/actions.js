@@ -16,6 +16,7 @@ import {
   CLEAR_AIRPORT_TO_NAME,
   CLEAR_AIRPORT_TO_DATA,
   TOGGLE_CALENDAR,
+  FILTER_PANEL_TOGGLE,
   SELECT_ARRIVAL_DAY,
   SELECT_DEPARTURE_DAY,
   SELECT_ONE_WAY,
@@ -37,7 +38,8 @@ import {
   GET_DETAILS,
   GET_SORT_DIRECTION,
   SORT_BY_DURATION,
-  SORT_BY_DURATION_DESR
+  SORT_BY_DURATION_DESR,
+  SELECT_AIRLINE
 } from "./types";
 
 export function showLoader() {
@@ -50,6 +52,10 @@ export function hideLoader() {
 
 export function flyDetailsPanelToggle(flyDetailsOpen) {
   return { type: FLY_DETAILS_PANEL_TOGGLE, payload: { flyDetailsOpen } };
+}
+
+export function filterPanelToggle(filterPanelOpen) {
+  return { type: FILTER_PANEL_TOGGLE, payload: { filterPanelOpen } };
 }
 
 export function warningAlert(warning) {
@@ -308,6 +314,10 @@ export function paginateByPage(pageNumber) {
     type: PAGINATE_BY_PAGE,
     payload: { pageNumber }
   };
+}
+
+export function selectAirline(selectedAirline) {
+  return { type: SELECT_AIRLINE, payload: selectedAirline };
 }
 
 export function loadFlightData(

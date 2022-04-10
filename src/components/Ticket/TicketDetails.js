@@ -45,9 +45,16 @@ export default (props) => {
     } else {return  <div></div>}
   };
 
+  const stopOver = () => {if(flyArrayTo[1]) {
+    return (Math.abs(flyArrayTo[1].utc_departure - flyArrayTo[0].utc_arrival)) }
+    else {return ""}
+  };
+  console.log("stop", stopOver(), flyArrayTo[1].utc_departure, flyArrayTo[0].utc_arrival)
+
   const flightTo = flyArrayTo.map((elem) => {
     return (
       <div className="flightDetailRow" key={elem}>
+        <h1>{stopOver()}</h1>
         <div className="row">
           <div className="col">
             <h6>{airlineName(elem.airline)}</h6>
@@ -90,6 +97,7 @@ export default (props) => {
           <div className="col">
             {elem.fare_classes}
           </div>
+
         </div>
 
       </div>

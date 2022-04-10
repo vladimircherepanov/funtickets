@@ -27,7 +27,10 @@ import {
   LOAD_MORE_FLIGHTS,
   DIRECT_FLY,
   FLY_DETAILS_PANEL_TOGGLE,
-  GET_DETAILS
+  GET_DETAILS,
+  FILTER_PANEL_TOGGLE,
+  SELECT_AIRLINE,
+  UNSELECT_AIRLINE,
 } from "./types";
 
 const initialState = {
@@ -56,7 +59,9 @@ const initialState = {
   clickedInput: false,
   direct: false,
   flyDetailsOpen: false,
-  detailsId: ""
+  detailsId: "",
+  filterPanelOpen: false,
+  selectedAirlines: []
 };
 
 export const inputsReducer = (state = initialState, action) => {
@@ -116,6 +121,8 @@ export const inputsReducer = (state = initialState, action) => {
         airportDataTo: [],
         airportData: []
       };
+
+
     case SELECT_ARRIVAL_DAY:
       return {
         ...state,
@@ -218,6 +225,25 @@ export const inputsReducer = (state = initialState, action) => {
         ...state,
         detailsId: action.payload.detailsId
       };
+    case FILTER_PANEL_TOGGLE:
+      return {
+        ...state,
+        filterPanelOpen: !action.payload.filterPanelOpen
+      };
+
+    case SELECT_AIRLINE:
+      return {
+        ...state,
+        selectedAirlines: action.payload.selectedAirline
+      };
+
+    /*case UNSELECT_AIRLINE:
+      return {
+        ...state,
+        selectedAirlines.push(action.payload.selectedAirline)
+      };
+
+     */
 
     default:
       return state;

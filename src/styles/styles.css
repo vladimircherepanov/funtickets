@@ -1,8 +1,11 @@
+@import url(./reset.css);
+
+
 .App {
   text-align: center;
   position: relative;
   z-index: 1;
-  font-family: "Trebuchet MS", Helvetica, sans-serif;
+  font-family: 'Nunito Sans', sans-serif;
   letter-spacing: -0.7px;
   word-spacing: 3px;
   color: #000000;
@@ -17,10 +20,22 @@ img {
   padding: 10%;
 }
 
-.body {
-  position: relative;
+
+body {
+
+  font-family: 'Nunito Sans', sans-serif;
+  font-style: 16px;
+  line-height: 22px;
+  font-weight: 400;
+  color: #7C8DB0;
+  background-color: #fff;
+  padding: 0 15px;
 }
 
+.container {
+  max-width: 1140px;
+  margin: 0 auto;
+}
 .table > :not(:last-child) > :last-child > * {
   border-color: lightgray;
 }

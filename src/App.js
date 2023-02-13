@@ -6,7 +6,7 @@ import FlightTable from "./components/Flights/FlightTable";
 import Ticket from "./components/Ticket/Ticket";
 import { useSelector } from "react-redux";
 
-import "./styles.css";
+import "./styles/styles.css";
 import DirectFlyCheck from "./components/Navbar/DirectFlyCheck";
 import Navbar from "./components/Navbar/Navbar";
 

@@ -17,8 +17,7 @@ export default function App() {
     return <Ticket />;
   } else {
     return (
-      <div className="container">
-        <div className="App">
+        <div>
           <Navbar />
           <div className="mainPanel">
             <div className="row">
@@ -41,7 +40,6 @@ export default function App() {
           </div>
           <FlightTable />
         </div>
-      </div>
     );
   }
 }

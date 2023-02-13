@@ -19,7 +19,6 @@ img {
 
 .body {
   position: relative;
-  z-index: 1;
 }
 
 .table > :not(:last-child) > :last-child > * {

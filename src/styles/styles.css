@@ -1,6 +1,5 @@
 @import url(./reset.css);
 
-
 .App {
   text-align: center;
   position: relative;
@@ -15,6 +14,15 @@
   font-variant: normal;
   text-transform: none;
 }
+.mt-1 {
+  margin-top: 0rem!important;
+}
+.row>* {
+  padding-left: 0!important;
+  padding-right: 0!important;
+}
+
+
 
 img {
   padding: 10%;
@@ -72,12 +80,11 @@ body {
 .price {
 }
 
-.mainPanel {
+.searchWrapper {
   position: relative;
   z-index: 1;
   background-color: gold;
   padding: 10px 15px 20px 15px;
-  border-radius: 8px;
   backdrop-filter: blur(50px);
 }
 .form-check-input {
